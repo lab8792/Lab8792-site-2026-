@@ -1,16 +1,18 @@
-Arquivos para preparar o site LAB 8792 para GitHub Pages.
+Correção para o site abrir certo no GitHub Pages usando a URL de projeto:
+https://lab8792.github.io/Lab8792-site-2026-/
 
-Substituir:
-- src/App.jsx
+Substituir estes arquivos no repositório:
 - vite.config.js
+- src/App.jsx
 
-Criar novo arquivo:
-- .github/workflows/deploy-pages.yml
+O problema anterior acontecia porque o Vite estava gerando assets com caminho absoluto /assets/...,
+e no GitHub Pages de projeto isso pode puxar assets do domínio raiz lab8792.github.io em vez do repositório.
 
-Depois, no GitHub:
-1. Settings > Pages
-2. Source: GitHub Actions
-3. Fazer commit na branch main
-4. Depois que o deploy rodar, configurar Custom domain se necessário.
+Depois de substituir:
+1. Commit changes
+2. Ir na aba Actions
+3. Esperar Deploy to GitHub Pages ficar verde
+4. Abrir: https://lab8792.github.io/Lab8792-site-2026-/
 
-O build foi testado localmente com npm install + npm run build.
+Pode apagar a pasta errada /workflows da raiz.
+Mantenha somente .github/workflows/deploy-pages.yml
