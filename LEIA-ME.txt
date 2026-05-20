@@ -1,0 +1,16 @@
+Arquivos para preparar o site LAB 8792 para GitHub Pages.
+
+Substituir:
+- src/App.jsx
+- vite.config.js
+
+Criar novo arquivo:
+- .github/workflows/deploy-pages.yml
+
+Depois, no GitHub:
+1. Settings > Pages
+2. Source: GitHub Actions
+3. Fazer commit na branch main
+4. Depois que o deploy rodar, configurar Custom domain se necessário.
+
+O build foi testado localmente com npm install + npm run build.
