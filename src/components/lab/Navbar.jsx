@@ -32,7 +32,7 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            <a href="#" className="font-heading font-bold text-base tracking-widest text-foreground uppercase">
+            <a href="#" className="font-heading font-bold text-lg lg:text-xl tracking-widest text-foreground uppercase">
               LAB <span className="text-primary">8792</span>
             </a>
 
