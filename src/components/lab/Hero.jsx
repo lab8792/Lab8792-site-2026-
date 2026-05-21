@@ -97,12 +97,12 @@ export default function Hero() {
       </div>
 
       {/* Marquee strip */}
-      <div className="relative z-10 border-t border-border overflow-hidden py-4 bg-secondary">
-        <div className="flex animate-marquee whitespace-nowrap">
+      <div className="relative z-10 border-t border-border overflow-hidden py-6 bg-secondary">
+  <div className="flex animate-marquee whitespace-nowrap">
           {repeated.map((item, i) => (
-            <span key={i} className="inline-flex items-center gap-6 px-6">
-              <span className="text-[10px] tracking-[0.28em] uppercase text-muted-foreground">{item}</span>
-              <span className="w-1 h-1 rounded-full bg-primary/50" />
+            <span className="inline-flex items-center gap-8 px-8">
+  <span className="text-[12px] md:text-[13px] tracking-[0.32em] uppercase text-muted-foreground font-medium">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary/50"></span>
             </span>
           ))}
         </div>
