@@ -131,45 +131,19 @@ function AgeGraphic() {
 
 function WoodGraphic() {
   return (
-    <div className="wood-graphic wood-graphic-v2" aria-label="Desenho técnico de um módulo de marcenaria com portas e dimensões de largura e altura">
-      <div className="wood-grid" />
-      <svg className="cabinet-drawing" viewBox="0 0 510 310" role="img" aria-label="Armário em perspectiva isométrica, com divisões de painéis e dimensões indicativas">
-        <defs>
-          <linearGradient id="cabinet-front" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#608298" stopOpacity=".34"/>
-            <stop offset="100%" stopColor="#1d3445" stopOpacity=".1"/>
-          </linearGradient>
-          <linearGradient id="cabinet-side" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#3c5d70" stopOpacity=".68"/>
-            <stop offset="100%" stopColor="#192c39" stopOpacity=".5"/>
-          </linearGradient>
-        </defs>
-        <g className="cabinet-lines">
-          <path d="M122 78 L324 78 L382 43 L180 43 Z" fill="#587b91" fillOpacity=".23" stroke="#c8dce7" strokeWidth="2"/>
-          <path d="M324 78 L382 43 L382 228 L324 264 Z" fill="url(#cabinet-side)" stroke="#adcbdc" strokeWidth="1.9"/>
-          <path d="M122 78 L324 78 L324 264 L122 264 Z" fill="url(#cabinet-front)" stroke="#c6dce9" strokeWidth="1.9"/>
-          <path d="M131 91 H313 V249 H131 Z" stroke="#88aabe" strokeWidth="1.2" fill="none"/>
-          <path d="M218 91 V249" stroke="#b7d3e1" strokeWidth="2"/>
-          <path d="M227 99 H304 V239 H227 Z" fill="#1e3546" fillOpacity=".42" stroke="#93b5c8" strokeWidth="1.25"/>
-          <path d="M227 166 H304" stroke="#c0d9e6" strokeWidth="2"/>
-          <path d="M231 169 H300 L314 160" stroke="#7898aa" strokeWidth="1.1"/>
-          <path d="M140 101 H207 V154 H140 Z" stroke="#bbd5e3" strokeWidth="1.2" fill="#6e95ac" fillOpacity=".2"/>
-          <path d="M140 162 H207 V239 H140 Z" stroke="#bbd5e3" strokeWidth="1.2" fill="#6e95ac" fillOpacity=".12"/>
-          <path d="M168 131 H179 M168 194 H179" stroke="#e4f0f5" strokeWidth="2.5" strokeLinecap="round"/>
-          <path d="M122 252 H324 M130 257 V264 M314 257 V264" stroke="#7f9dac" strokeWidth="1.2"/>
-          <path d="M122 78 L180 43 M324 78 L382 43" stroke="#edf6fa" strokeOpacity=".65" strokeWidth="1"/>
-          <circle cx="141" cy="89" r="3" fill="#c3e8f2"/>
-          <circle cx="304" cy="239" r="3" fill="#c3e8f2"/>
-        </g>
-        <g className="cabinet-dimensions" fill="none" stroke="#80afc6" strokeWidth="1">
-          <path d="M122 280 V298 M324 280 V298 M122 290 H324 M122 286 L122 294 M324 286 L324 294"/>
-          <path d="M105 78 H76 M105 264 H76 M89 78 V264 M85 78 H93 M85 264 H93"/>
-        </g>
-        <g fill="#d4e8f1" fontFamily="Arial,sans-serif" letterSpacing="1.1" fontSize="12">
-          <text x="223" y="284" textAnchor="middle">1200 mm</text>
-          <text transform="translate(77 178) rotate(-90)" textAnchor="middle">720 mm</text>
-        </g>
-      </svg>
+    <div className="wood-graphic wood-video-graphic" aria-label="Vídeo ilustrativo de produção e projeto de móveis do MarceneiroPro">
+      <video
+        className="wood-product-video"
+        src={import.meta.env.BASE_URL + "videos/VideoMarceneiroPro.mp4"}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        disablePictureInPicture
+        aria-label="Demonstração visual de projeto de móveis, modelagem e usinagem"
+      />
+      <div className="wood-video-overlay" aria-hidden="true" />
       <div className="cabinet-header">MODULAR SYSTEM <span>3D / CONFIG</span></div>
       <div className="cabinet-footer"><span>ESTUDO PARAMÉTRICO ILUSTRATIVO</span><span>LAB / 002</span></div>
     </div>
