@@ -482,3 +482,10 @@ body { margin: 0; background: #fff; color: #171c20; font-family: var(--font-body
   .creative-display { min-height:430px; }
   .creative-word { top:30%; }
 }
+
+/* Vídeo do IdadeID — mantém ID/01 e IDENTITY / ACCESS sobre a imagem. */
+.age-video-graphic { isolation:isolate; background:#14342b; }
+.age-product-video { position:absolute; inset:0; z-index:1; width:100%; height:100%; object-fit:cover; object-position:center 46%; display:block; }
+.age-video-overlay { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg,rgba(9,29,28,.25) 0%,rgba(9,29,28,.02) 40%,rgba(9,29,28,.54) 100%); }
+.age-video-graphic .age-graphic-note,.age-video-graphic .age-graphic-corner { z-index:3; color:#d0eadf; text-shadow:0 1px 7px rgba(0,0,0,.8); font-weight:600; }
+.age-video-graphic .age-indicator { box-shadow:0 0 0 3px rgba(57,94,76,.28); }
