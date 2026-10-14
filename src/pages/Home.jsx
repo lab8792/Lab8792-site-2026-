@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Box, Check,
   ChevronRight, Code2, Factory, Globe2, Instagram, Layers3,
-  Mail, Menu, MoveUpRight, Network, ShieldCheck,
+  Mail, Menu, MoveUpRight, Network,
   Sparkles, Workflow, X
 } from "lucide-react";
 
@@ -110,13 +110,19 @@ function SectionHead({ kicker, title, description, light = false }) {
 
 function AgeGraphic() {
   return (
-    <div className="age-graphic" aria-hidden="true">
-      <div className="age-grid" />
-      <span className="age-ring ring-one" />
-      <span className="age-ring ring-two" />
-      <span className="age-ring ring-three" />
-      <div className="age-face"><ShieldCheck size={50} strokeWidth={1.05} /></div>
-      <div className="age-scan scan-top"/><div className="age-scan scan-bottom"/>
+    <div className="age-graphic age-video-graphic" aria-label="Vídeo demonstrativo do IdadeID em reprodução automática e sem som">
+      <video
+        className="age-product-video"
+        src={import.meta.env.BASE_URL + "videos/VideoIdadeID.mp4"}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        disablePictureInPicture
+        aria-label="Demonstração em vídeo da verificação de identidade IdadeID"
+      />
+      <div className="age-video-overlay" aria-hidden="true" />
       <div className="age-graphic-note"><span className="age-indicator" />IDENTITY / ACCESS</div>
       <div className="age-graphic-corner">ID/01</div>
     </div>
