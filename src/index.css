@@ -410,3 +410,58 @@ body { margin: 0; background: #fff; color: #171c20; font-family: var(--font-body
 .footer-legal>a:hover { color:#fff; text-decoration:underline; }
 .footer-legal>span { display:flex; align-items:center; gap:12px; letter-spacing:.12em; font-size:9px; }
 @media(max-width:760px){.footer-legal{gap:18px;flex-wrap:wrap;}}
+
+
+/* Visual refinements v2 — architecture, parametric furniture, material studies */
+.hero-visual-v2 { isolation:isolate; overflow:visible; }
+.architecture-glow { position:absolute; inset:11% 2% 8% 3%; background:radial-gradient(ellipse at 53% 54%,rgba(122,160,182,.24),rgba(122,160,182,.07) 48%,transparent 75%); filter:blur(22px); z-index:-1; }
+.architecture-grid { position:absolute; inset:7% 0; opacity:.28; background-image:linear-gradient(to right,rgba(87,117,138,.11) 1px,transparent 1px),linear-gradient(to bottom,rgba(87,117,138,.11) 1px,transparent 1px); background-size:42px 42px; mask-image:radial-gradient(ellipse,black 14%,transparent 70%); }
+.architecture-art { display:block; width:108%; max-width:720px; height:auto; position:relative; overflow:visible; filter:drop-shadow(24px 34px 26px rgba(22,37,48,.18)); transform:translate(0,0); transition:transform .7s cubic-bezier(.2,.7,.2,1); }
+.hero-visual-v2:hover .architecture-art { transform:translateY(-7px); }
+.architecture-side-note { position:absolute; left:3%; top:13%; display:flex; flex-direction:column; gap:7px; font-family:var(--font-body); font-size:9px; letter-spacing:.15em; color:#8c9fab; }
+.architecture-side-note span:first-child { color:#435f73; font-weight:700; }
+.architecture-corner-note { position:absolute; display:flex; align-items:center; gap:10px; right:4%; bottom:8%; font-size:9px; letter-spacing:.18em; color:#688499; }
+.wood-graphic-v2 { background:radial-gradient(ellipse at 54% 45%,#324f63,#213848 65%,#1c2f3d); }
+.wood-graphic-v2 .wood-grid { background-size:29px 29px; opacity:.09; }
+.cabinet-drawing { height:100%; width:100%; max-width:540px; position:relative; display:block; margin:auto; z-index:1; filter:drop-shadow(12px 14px 14px rgba(6,21,30,.25)); }
+.cabinet-header { position:absolute; z-index:2; top:18px; left:22px; right:22px; display:flex; align-items:center; justify-content:space-between; font-size:9px; letter-spacing:.14em; color:#a8c7d8; }
+.cabinet-header span { color:#86adc4; }
+.cabinet-footer { position:absolute; z-index:2; bottom:16px; left:22px; right:22px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:8px; letter-spacing:.13em; color:#8fb2c5; }
+.creative-composition { position:absolute; inset:16% -6% -7% 4%; overflow:visible; display:flex; align-items:center; justify-content:center; }
+.creative-composition svg { height:100%; width:100%; max-width:780px; position:relative; z-index:2; display:block; filter:drop-shadow(15px 19px 22px rgba(13,33,46,.20)); }
+.creative-display:after { content:""; position:absolute; width:52%; height:52%; bottom:5%; right:5%; border-radius:50%; background:rgba(141,183,208,.12); filter:blur(75px); z-index:0; pointer-events:none; }
+.creative-word { font-size:clamp(50px,5.5vw,86px); position:absolute; z-index:4; pointer-events:none; }
+.creative-caption { z-index:5; }
+@media(max-width:1220px) {
+ .architecture-art { width:110%; }
+ .creative-composition { inset:24% -16% -4% 0; }
+}
+@media(max-width:1020px) {
+ .architecture-art { max-width:690px; width:100%; }
+ .architecture-side-note { left:8%; top:8%; }
+ .architecture-corner-note { right:6%; bottom:3%; }
+ .creative-composition { inset:24% -18% -8% -8%; }
+}
+@media(max-width:760px) {
+ .hero-visual-v2 { height:440px; margin-top:10px; }
+ .architecture-art { width:100%; max-width:560px; }
+ .architecture-side-note { top:4%; left:1%; font-size:8px; }
+ .architecture-corner-note { bottom:0; right:0; font-size:8px; }
+ .cabinet-drawing { max-width:490px; }
+ .cabinet-header { top:13px; }
+ .cabinet-footer { bottom:9px; font-size:7px; }
+ .creative-composition { inset:13% -5% -14% 0; }
+}
+@media(max-width:430px) {
+ .hero-visual-v2 { height:345px; }
+ .architecture-art { width:112%; max-width:none; }
+ .architecture-side-note { left:0; top:1%; font-size:7px; }
+ .architecture-corner-note { bottom:-2%; }
+ .creative-composition { inset:20% -18% -14% -10%; }
+ .cabinet-drawing { width:110%; max-width:none; margin-left:-5%; }
+ .cabinet-header { font-size:8px; }
+ .cabinet-footer span:first-child { max-width:190px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .hero-visual-v2:hover .architecture-art { transform:none; }
+}
