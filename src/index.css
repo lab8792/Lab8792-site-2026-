@@ -465,3 +465,20 @@ body { margin: 0; background: #fff; color: #171c20; font-family: var(--font-body
 @media(prefers-reduced-motion:reduce) {
  .hero-visual-v2:hover .architecture-art { transform:none; }
 }
+
+/* Ajustes solicitados: remoção das ilustrações do hero e Form & Function. */
+.hero-section { min-height:720px; }
+.hero-layout { grid-template-columns:minmax(0, 1fr); min-height:624px; }
+.hero-copy { max-width:1040px; }
+.creative-display { background:linear-gradient(135deg,#304452 0%,#293b48 100%); }
+.creative-word { top:27%; left:9%; font-size:clamp(56px,5.8vw,90px); }
+.creative-display:after { display:none; }
+@media(max-width:1020px) {
+  .hero-section { min-height:0; }
+  .hero-layout { grid-template-columns:1fr; min-height:0; padding-bottom:64px; }
+}
+@media(max-width:760px) {
+  .hero-layout { padding-bottom:48px; }
+  .creative-display { min-height:430px; }
+  .creative-word { top:30%; }
+}
