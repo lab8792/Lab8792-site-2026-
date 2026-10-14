@@ -489,3 +489,13 @@ body { margin: 0; background: #fff; color: #171c20; font-family: var(--font-body
 .age-video-overlay { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg,rgba(9,29,28,.25) 0%,rgba(9,29,28,.02) 40%,rgba(9,29,28,.54) 100%); }
 .age-video-graphic .age-graphic-note,.age-video-graphic .age-graphic-corner { z-index:3; color:#d0eadf; text-shadow:0 1px 7px rgba(0,0,0,.8); font-weight:600; }
 .age-video-graphic .age-indicator { box-shadow:0 0 0 3px rgba(57,94,76,.28); }
+
+/* Card MarceneiroPro: vídeo silencioso em loop, quatro legendas preservadas. */
+.wood-video-graphic { position:relative; isolation:isolate; background:#223b4b; }
+.wood-product-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; display:block; z-index:1; }
+.wood-video-overlay { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg,rgba(8,24,34,.53) 0%,rgba(8,24,34,.06) 29%,rgba(8,24,34,.03) 63%,rgba(8,24,34,.61) 100%); }
+.wood-video-graphic .cabinet-header,.wood-video-graphic .cabinet-footer { z-index:3; color:#eef5f9; text-shadow:0 1px 8px rgba(0,0,0,.9); font-weight:600; }
+.wood-video-graphic .cabinet-header span,.wood-video-graphic .cabinet-footer span { color:#d8e9f3; }
+@media(max-width:760px) {
+  .wood-video-graphic .cabinet-footer { font-size:7px; }
+}
