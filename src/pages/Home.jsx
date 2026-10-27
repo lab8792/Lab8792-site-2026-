@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Box, Check,
-  ChevronRight, Code2, Factory, Globe2, Instagram, Layers3,
-  Mail, Menu, MoveUpRight, Network,
+  ChevronRight, Factory, Globe2, Instagram, Monitor, Palette,
+  Mail, Menu, MoveUpRight,
   Sparkles, Workflow, X
 } from "lucide-react";
 
@@ -12,78 +12,78 @@ const talkLink = (topic) => WHATSAPP + "?text=" + encodeURIComponent(
 );
 
 const nav = [
-  { label: "Soluções", href: "#solucoes" },
+  { label: "Serviços", href: "#solucoes" },
+  { label: "Design & 3D", href: "#criativo" },
   { label: "Produtos", href: "#produtos" },
-  { label: "Atuação", href: "#atuacao" },
   { label: "Sobre", href: "#sobre" },
 ];
 
 const services = [
   {
-    index: "01", icon: <Code2 size={26} strokeWidth={1.5} />,
-    category: "DESENVOLVIMENTO",
-    name: "Softwares & plataformas",
-    description: "Sistemas sob medida para organizar processos, conectar equipes e transformar operações manuais em experiências digitais.",
-    audience: "Indústrias, equipes comerciais e operações B2B",
-    deliveries: ["Sistemas web", "Portais e dashboards", "Integrações"],
-    topic: "um software ou plataforma sob medida",
+    index: "01", icon: <Palette size={26} strokeWidth={1.5} />,
+    category: "DESIGN & COMUNICAÇÃO",
+    name: "Design & identidade",
+    description: "Damos forma a marcas, campanhas e materiais que precisam comunicar com clareza, consistência e personalidade — no digital e no impresso.",
+    audience: "Marcas, indústrias e equipes de marketing",
+    deliveries: ["Identidade visual", "Campanhas", "Materiais comerciais"],
+    topic: "design, identidade visual ou criação de campanhas",
     className: "service-card-one"
   },
   {
-    index: "02", icon: <Workflow size={26} strokeWidth={1.5} />,
-    category: "EFICIÊNCIA OPERACIONAL",
-    name: "Automação & IA aplicada",
-    description: "Eliminamos etapas repetitivas, conectamos ferramentas e aplicamos inteligência artificial onde ela realmente melhora o trabalho.",
-    audience: "Empresas com fluxos repetitivos e sistemas desconectados",
-    deliveries: ["Automações", "Fluxos inteligentes", "Assistentes internos"],
-    topic: "automação e inteligência artificial para minha empresa",
+    index: "02", icon: <Box size={26} strokeWidth={1.5} />,
+    category: "VISUALIZAÇÃO & MOVIMENTO",
+    name: "3D, animação & motion",
+    description: "Traduzimos produtos e conceitos em imagens, renderizações, vídeos e animações que explicam, valorizam e aproximam.",
+    audience: "Fabricantes, lançamentos de produto e comunicação técnica",
+    deliveries: ["Renderização 3D", "Animação de produto", "Motion design"],
+    topic: "modelagem 3D, renderização ou animação",
     className: "service-card-two"
   },
   {
-    index: "03", icon: <Layers3 size={26} strokeWidth={1.5} />,
-    category: "NOVOS NEGÓCIOS",
-    name: "Produtos digitais & MVPs",
-    description: "Transformamos uma oportunidade em produto digital funcional, com foco na experiência, na validação da proposta e na evolução.",
-    audience: "Empresas e empreendedores com ideias a validar",
-    deliveries: ["MVPs", "Plataformas SaaS", "Interfaces de produto"],
-    topic: "desenvolvimento de um produto digital ou MVP",
+    index: "03", icon: <Monitor size={26} strokeWidth={1.5} />,
+    category: "EXPERIÊNCIAS DIGITAIS",
+    name: "Sites & experiências web",
+    description: "Projetamos experiências digitais com atenção ao visual, à navegação e aos objetivos do negócio — de sites institucionais a interfaces interativas.",
+    audience: "Empresas que buscam presença digital e boas experiências",
+    deliveries: ["Sites e landing pages", "UI/UX", "Experiências interativas"],
+    topic: "um site ou experiência digital",
     className: "service-card-three"
   },
   {
-    index: "04", icon: <Box size={26} strokeWidth={1.5} />,
-    category: "CAPACIDADE CRIATIVA",
-    name: "Design, 3D & motion",
-    description: "Criamos comunicação, visualizações e experiências que tornam produtos, marcas e ideias mais fáceis de entender e apresentar.",
-    audience: "Marcas, fabricantes e equipes de marketing",
-    deliveries: ["Design gráfico", "Renderização e animação 3D", "Motion"],
-    topic: "design, 3D ou motion",
+    index: "04", icon: <Workflow size={26} strokeWidth={1.5} />,
+    category: "SOLUÇÕES DIGITAIS",
+    name: "Tecnologia & automação",
+    description: "Quando um projeto precisa ir além da comunicação, conectamos tecnologia, processos e interfaces para criar ferramentas digitais sob medida.",
+    audience: "Equipes com processos a simplificar ou integrar",
+    deliveries: ["Ferramentas sob medida", "Automações", "Integrações"],
+    topic: "uma solução digital ou automação",
     className: "service-card-four"
   }
 ];
 
 const sectors = [
   {
-    n: "01", icon: <Factory size={21} strokeWidth={1.6} />,
-    name: "Indústria & fabricantes",
-    text: "Configuradores, orçamentos, catálogos digitais e processos que conectam produto, comercial e operação."
+    n: "01", icon: <Palette size={21} strokeWidth={1.6} />,
+    name: "Marcas & comunicação",
+    text: "Identidade, campanhas, materiais comerciais e experiências visuais que fortalecem a forma como a marca se apresenta."
   },
   {
-    n: "02", icon: <Network size={21} strokeWidth={1.6} />,
-    name: "Operações B2B",
-    text: "Portais, cadastros, aprovações, fluxos internos e integrações para reduzir retrabalho."
+    n: "02", icon: <Factory size={21} strokeWidth={1.6} />,
+    name: "Indústria & fabricantes",
+    text: "Renderizações, animações técnicas, catálogos, apresentações de produto e projetos digitais conectados à operação."
   },
   {
     n: "03", icon: <Globe2 size={21} strokeWidth={1.6} />,
-    name: "Negócios digitais",
-    text: "Plataformas, experiências web e recursos específicos para negócios que operam digitalmente."
+    name: "Negócios & experiências digitais",
+    text: "Sites, interfaces, plataformas e soluções sob medida para quem precisa criar ou melhorar experiências online."
   }
 ];
 
 const steps = [
-  { n: "01", title: "Entender", text: "Conhecemos o contexto, os usuários e o problema que precisa ser resolvido." },
-  { n: "02", title: "Desenhar", text: "Definimos uma solução viável, seu escopo e a experiência de uso." },
-  { n: "03", title: "Construir", text: "Desenvolvemos, integramos e validamos cada entrega." },
-  { n: "04", title: "Evoluir", text: "Acompanhamos o aprendizado e planejamos os próximos passos." }
+  { n: "01", title: "Conhecer", text: "Entendemos a marca, o público, os objetivos e o contexto do projeto." },
+  { n: "02", title: "Conceber", text: "Exploramos direções criativas e definimos o caminho visual e técnico." },
+  { n: "03", title: "Criar", text: "Transformamos o conceito em peças, imagens, experiências ou soluções funcionais." },
+  { n: "04", title: "Entregar", text: "Refinamos, validamos e preparamos o projeto para sua aplicação real." }
 ];
 
 function Brand({ inverted = false }) {
@@ -181,18 +181,18 @@ export default function Home() {
         <section className="hero-section" id="inicio">
           <div className="site-container hero-layout">
             <div className="hero-copy">
-              <Eyebrow>TECNOLOGIA / CRIAÇÃO / DESENVOLVIMENTO</Eyebrow>
-              <h1>Desafios reais.<br/><span>Soluções digitais.</span></h1>
-              <p className="hero-description">Criamos softwares, automações e produtos digitais para transformar problemas de negócio em novas possibilidades. Tecnologia e capacidade criativa, do conceito à implementação.</p>
+              <Eyebrow>DESIGN / 3D / CRIAÇÃO / SOLUÇÕES DIGITAIS</Eyebrow>
+              <h1>Design que transforma.<br/><span>Ideias que ganham vida.</span></h1>
+              <p className="hero-description">Criamos identidades, campanhas, imagens e animações 3D, sites e experiências digitais que dão forma às ideias e valorizam o que cada empresa tem de único. Criatividade e tecnologia, do conceito à entrega.</p>
               <div className="hero-actions">
-                <a className="button button-primary" href="#solucoes">Explore nossas soluções <ArrowUpRight size={18}/></a>
+                <a className="button button-primary" href="#solucoes">Conheça nossos serviços <ArrowUpRight size={18}/></a>
                 <a className="button button-link" href="#produtos">Conheça nossos produtos <ArrowRight size={17}/></a>
               </div>
               <div className="hero-meta">
                 <span className="hero-meta-line" aria-hidden="true" />
-                <span>DESENVOLVIMENTO PARA EMPRESAS</span>
+                <span>DESIGN, 3D & COMUNICAÇÃO</span>
                 <span className="hero-meta-dot">/</span>
-                <span>PRODUTOS PRÓPRIOS</span>
+                <span>EXPERIÊNCIAS DIGITAIS</span>
               </div>
             </div>
           </div>
@@ -203,7 +203,7 @@ export default function Home() {
           <div className="expertise-track">
             {Array.from({length: 2}).map((_, k) => (
               <div className="expertise-items" key={k} aria-hidden={k === 1}>
-                {["SOFTWARE SOB MEDIDA", "PLATAFORMAS DIGITAIS", "AUTOMAÇÃO & IA", "PRODUTOS PRÓPRIOS", "DESIGN & 3D"].map((item) => <span key={item}><i />{item}</span>)}
+                {["DESIGN & IDENTIDADE", "3D & ANIMAÇÃO", "CAMPANHAS & COMUNICAÇÃO", "SITES & EXPERIÊNCIAS", "SOLUÇÕES DIGITAIS"].map((item) => <span key={item}><i />{item}</span>)}
               </div>
             ))}
           </div>
@@ -212,26 +212,26 @@ export default function Home() {
         <section className="intro-section section-space" id="essencia">
           <div className="site-container intro-layout">
             <div>
-              <Eyebrow>O QUE MOVE A LAB</Eyebrow>
-              <h2>Não entregamos apenas código.<br/><span>Construímos possibilidades.</span></h2>
+              <Eyebrow>NOSSA ESSÊNCIA</Eyebrow>
+              <h2>Design como ponto de partida.<br/><span>Ideias sem limite de formato.</span></h2>
             </div>
             <div className="intro-right">
-              <p>Todo desafio tem um contexto. Nosso trabalho começa entendendo o que precisa mudar — e só então escolhendo a tecnologia, o design e os recursos certos para isso.</p>
+              <p>Uma boa ideia precisa ser bem pensada, bem desenhada e bem executada. Unimos estratégia, criação e tecnologia para comunicar produtos, fortalecer marcas e desenvolver novas experiências.</p>
               <a className="text-cta" href="#sobre">Conheça a LAB <ArrowUpRight size={17}/></a>
             </div>
           </div>
           <div className="site-container principles">
-            <div><span>01 /</span><strong>Visão de negócio</strong><p>Partimos do problema real, não de uma ferramenta da moda.</p></div>
-            <div><span>02 /</span><strong>Execução integrada</strong><p>Conectamos desenvolvimento, experiência e comunicação.</p></div>
-            <div><span>03 /</span><strong>Olhar de produto</strong><p>Criamos soluções que podem evoluir junto com a operação.</p></div>
+            <div><span>01 /</span><strong>Olhar estratégico</strong><p>Entendemos a marca, o mercado e o objetivo antes de criar.</p></div>
+            <div><span>02 /</span><strong>Expressão visual</strong><p>Traduzimos ideias em design, imagens, movimento e experiências.</p></div>
+            <div><span>03 /</span><strong>Capacidade digital</strong><p>Levamos a criação além do visual quando o projeto pede tecnologia.</p></div>
           </div>
         </section>
 
         <section className="solutions-section section-space" id="solucoes">
           <div className="site-container">
             <div className="solutions-top">
-              <SectionHead kicker="O QUE FAZEMOS" title={<>Tecnologia que faz<br/>sentido para o seu negócio.</>} description="Quatro competências que se conectam para transformar necessidades em entregas concretas."/>
-              <span className="section-index">01 — SOLUÇÕES</span>
+              <SectionHead kicker="O QUE FAZEMOS" title={<>Criatividade para comunicar.<br/>Soluções para evoluir.</>} description="Design, 3D e comunicação lideram nosso trabalho. Experiências e soluções digitais ampliam o que podemos entregar."/>
+              <span className="section-index">01 — SERVIÇOS</span>
             </div>
             <div className="services-grid">
               {services.map((service) => (
@@ -251,11 +251,29 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="creative-section" id="criativo">
+          <div className="site-container creative-layout">
+            <div className="creative-display" aria-label="Painel tipográfico Form & Function">
+              <div className="creative-display-grid"/>
+              <span className="creative-word">FORM<br/><em>&</em> FUNCTION</span>
+              <div className="creative-caption">DIREÇÃO VISUAL / LAB 8792 — ESTUDO GRÁFICO</div>
+            </div>
+            <div className="creative-copy">
+              <Eyebrow>DESIGN ESTÁ NO CENTRO DO QUE FAZEMOS</Eyebrow>
+              <h2>Uma boa ideia merece<br/><span>uma execução à altura.</span></h2>
+              <p>Do conceito visual à peça final, criamos identidades, campanhas, apresentações, renderizações, animações e motion. A atenção ao detalhe acompanha cada formato e cada entrega.</p>
+              <div className="creative-tags"><span>DESIGN GRÁFICO</span><span>RENDERIZAÇÃO 3D</span><span>ANIMAÇÃO</span><span>MOTION DESIGN</span><span>COMUNICAÇÃO DE PRODUTO</span></div>
+              <a className="text-cta" href={talkLink("um projeto criativo de design ou 3D")} target="_blank" rel="noopener noreferrer">Falar sobre um projeto criativo <ArrowUpRight size={17}/></a>
+            </div>
+          </div>
+        </section>
+
+
         <section className="products-section section-space" id="produtos">
           <div className="products-topography" aria-hidden="true" />
           <div className="site-container">
             <div className="products-head">
-              <SectionHead light kicker="TECNOLOGIA PROPRIETÁRIA" title={<>Criamos para empresas.<br/><span>Também construímos o futuro.</span></>} description="Além dos projetos sob medida, desenvolvemos produtos próprios para desafios específicos de mercado."/>
+              <SectionHead light kicker="PRODUTOS CRIADOS NA LAB" title={<>Da criação à inovação.<br/><span>Ideias que viram produtos.</span></>} description="Nossa capacidade criativa também ganha forma em produtos digitais próprios, desenvolvidos para necessidades reais."/>
               <div className="products-aside">IDEIAS QUE SE TORNAM<br/>PRODUTOS REAIS <MoveUpRight size={18}/></div>
             </div>
             <div className="products-grid">
@@ -273,7 +291,7 @@ export default function Home() {
                 <div className="product-details">
                   <div className="product-brand-row"><span className="product-type">02 / TECNOLOGIA INDUSTRIAL</span><span className="product-label">EM DESENVOLVIMENTO</span></div>
                   <h3>MarceneiroPro<span>.</span></h3>
-                  <p>Uma plataforma para conectar fabricantes e projetistas, reunindo configuração de produtos, visualização 3D e processos comerciais.</p>
+                  <p>Uma plataforma que une projeto, visualização 3D e configuração de móveis para conectar fabricantes e projetistas.</p>
                   <a href={talkLink("o projeto MarceneiroPro")} target="_blank" rel="noopener noreferrer" className="product-link">Conversar sobre o projeto <ArrowUpRight size={18}/></a>
                 </div>
               </article>
@@ -286,9 +304,9 @@ export default function Home() {
           <div className="site-container sectors-layout">
             <div className="sectors-side">
               <Eyebrow>ONDE ATUAMOS</Eyebrow>
-              <h2>Conhecemos o valor de um processo que funciona.</h2>
-              <p>Nos aproximamos da operação para entender o que trava, o que se repete e o que pode ser melhor.</p>
-              <a href="#contato" className="text-cta">Conte seu desafio <ArrowUpRight size={17}/></a>
+              <h2>Cada mercado tem uma história para contar.</h2>
+              <p>Entendemos produtos, públicos e desafios para criar uma comunicação mais clara — e experiências digitais quando elas fazem sentido.</p>
+              <a href="#contato" className="text-cta">Fale sobre seu projeto <ArrowUpRight size={17}/></a>
             </div>
             <div className="sectors-list">
               {sectors.map((sector) => (
@@ -302,26 +320,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="creative-section" id="criativo">
-          <div className="site-container creative-layout">
-            <div className="creative-display" aria-label="Painel tipográfico Form & Function">
-              <div className="creative-display-grid"/>
-              <span className="creative-word">FORM<br/><em>&</em> FUNCTION</span>
-              <div className="creative-caption">DIREÇÃO VISUAL / LAB 8792 — ESTUDO GRÁFICO</div>
-            </div>
-            <div className="creative-copy">
-              <Eyebrow>DESIGN É PARTE DO NOSSO DNA</Eyebrow>
-              <h2>Criatividade não é um extra.<br/><span>É uma vantagem.</span></h2>
-              <p>O mesmo olhar que desenha uma interface cria a visualização de um produto, estrutura uma apresentação ou dá vida a uma animação. Design, 3D e motion seguem como parte essencial do que fazemos.</p>
-              <div className="creative-tags"><span>DESIGN GRÁFICO</span><span>RENDERIZAÇÃO 3D</span><span>ANIMAÇÃO</span><span>MOTION DESIGN</span><span>COMUNICAÇÃO DE PRODUTO</span></div>
-              <a className="text-cta" href={talkLink("um projeto criativo de design ou 3D")} target="_blank" rel="noopener noreferrer">Falar sobre um projeto criativo <ArrowUpRight size={17}/></a>
-            </div>
-          </div>
-        </section>
-
         <section className="method-section section-space" id="metodo">
           <div className="site-container">
-            <SectionHead kicker="NOSSO PROCESSO" title={<>Boas soluções começam<br/>com boas perguntas.</>} description="Trabalhamos por etapas claras, com escopo definido e decisões orientadas ao problema."/>
+            <SectionHead kicker="NOSSO PROCESSO" title={<>Do conceito à entrega.<br/>Com intenção em cada detalhe.</>} description="Cada projeto começa com escuta e direção criativa, evoluindo para uma execução alinhada ao objetivo."/>
             <div className="method-grid">
               {steps.map((step) => <div className="method-step" key={step.n}><span className="method-no">{step.n}</span><span className="method-rule"/><h3>{step.title}</h3><p>{step.text}</p></div>)}
             </div>
@@ -333,8 +334,8 @@ export default function Home() {
             <div className="about-side"><Eyebrow light>SOBRE A LAB</Eyebrow><div className="about-coordinate">BENTO GONÇALVES — RS<br/>ATUAÇÃO REMOTA / SEM FRONTEIRAS</div></div>
             <div className="about-main">
               <h2>Uma estrutura enxuta.<br/>Uma visão <span>sem limites de formato.</span></h2>
-              <p>A LAB 8792 é uma empresa de tecnologia e criação que desenvolve soluções digitais, produtos próprios e projetos visuais. Trabalhamos de forma colaborativa, reunindo as competências certas para cada desafio.</p>
-              <div className="about-bottom"><span><Check size={16}/> Desenvolvimento e produto</span><span><Check size={16}/> Tecnologia e design</span><span><Check size={16}/> Colaboração e execução</span></div>
+              <p>A LAB 8792 é uma empresa de design, criação e soluções digitais. Desenvolvemos projetos de identidade, comunicação, 3D, animação e experiências web, além de criar nossos próprios produtos. Reunimos estratégia, sensibilidade visual e tecnologia conforme a necessidade de cada projeto.</p>
+              <div className="about-bottom"><span><Check size={16}/> Design e comunicação</span><span><Check size={16}/> 3D e experiências digitais</span><span><Check size={16}/> Criação e execução</span></div>
             </div>
           </div>
         </section>
@@ -344,7 +345,7 @@ export default function Home() {
             <div className="contact-main">
               <Eyebrow>VAMOS CONVERSAR?</Eyebrow>
               <h2>Seu próximo projeto<br/>pode começar <span>aqui.</span></h2>
-              <p>Conte o que sua empresa precisa resolver. Vamos entender o desafio e avaliar como podemos contribuir.</p>
+              <p>Uma marca, um lançamento, uma campanha, uma animação ou uma experiência digital. Conte sua ideia e vamos encontrar a melhor forma de realizá-la.</p>
               <div className="contact-actions">
                 <a className="button button-primary" href={talkLink("um projeto com a LAB 8792")} target="_blank" rel="noopener noreferrer">Converse com um especialista <ArrowUpRight size={19}/></a>
                 <a className="contact-mail" href="mailto:contato@lab8792.com.br"><Mail size={17}/> contato@lab8792.com.br</a>
@@ -358,12 +359,12 @@ export default function Home() {
       <footer className="lab-footer">
         <div className="site-container">
           <div className="footer-top">
-            <div className="footer-identity"><a href="#inicio"><Brand inverted/></a><p>Tecnologia, produtos digitais<br/>e capacidade criativa.</p></div>
+            <div className="footer-identity"><a href="#inicio"><Brand inverted/></a><p>Design, 3D e comunicação.<br/>Experiências e soluções digitais.</p></div>
             <div className="footer-column"><span>NAVEGAÇÃO</span><a href="#solucoes">Soluções</a><a href="#produtos">Produtos</a><a href="#atuacao">Atuação</a><a href="#sobre">Sobre a LAB</a></div>
             <div className="footer-column"><span>CONTATO</span><a href="mailto:contato@lab8792.com.br">contato@lab8792.com.br</a><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp <ArrowUpRight size={14}/></a><a href="https://www.instagram.com/lab_8792/" target="_blank" rel="noopener noreferrer">Instagram <Instagram size={15}/></a></div>
             <div className="footer-location"><span>BASE</span><strong>Bento Gonçalves<br/>Rio Grande do Sul, Brasil</strong><small>Colaboração sem fronteiras.</small></div>
           </div>
-          <div className="footer-bottom"><span>© {new Date().getFullYear()} LAB 8792. Todos os direitos reservados.</span><div className="footer-legal"><a href={import.meta.env.BASE_URL + "privacidade.html"}>Política de privacidade</a><span>TECNOLOGIA + CRIAÇÃO <ArrowUpRight size={14}/></span></div></div>
+          <div className="footer-bottom"><span>© {new Date().getFullYear()} LAB 8792. Todos os direitos reservados.</span><div className="footer-legal"><a href={import.meta.env.BASE_URL + "privacidade.html"}>Política de privacidade</a><span>DESIGN + CRIAÇÃO + DIGITAL <ArrowUpRight size={14}/></span></div></div>
         </div>
       </footer>
     </div>
