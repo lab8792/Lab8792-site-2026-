@@ -236,7 +236,7 @@ body { margin: 0; background: #fff; color: #171c20; font-family: var(--font-body
 .creative-tags span { font-size:9px; letter-spacing:.08em; color:#506474; border:1px solid #cdd8df; padding:8px 10px; }
 .creative-copy .text-cta { margin-top:35px; }
 
-.method-section { background:white; }
+.method-section { background:#f5f6f6; }
 .method-section .section-heading>p { max-width:540px; }
 .method-grid { display:grid; grid-template-columns:repeat(4,1fr); margin-top:65px; border-top:1px solid #dce3e7; }
 .method-step { position:relative; padding:30px 38px 0 0; }
