@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
-  ArrowDown, ArrowRight, ArrowUpRight, Box, Check,
+  ArrowDown, ArrowUpRight, Box, Check,
   ChevronRight, Factory, Globe2, Instagram, Monitor, Palette,
-  Mail, Menu, MoveUpRight,
-  Sparkles, Workflow, X
+  Mail, Menu, Workflow, X
 } from "lucide-react";
 
 const WHATSAPP = "https://wa.me/5554997028792";
@@ -14,7 +13,6 @@ const talkLink = (topic) => WHATSAPP + "?text=" + encodeURIComponent(
 const nav = [
   { label: "Serviços", href: "#solucoes" },
   { label: "Design & 3D", href: "#criativo" },
-  { label: "Produtos", href: "#produtos" },
   { label: "Sobre", href: "#sobre" },
 ];
 
@@ -108,48 +106,6 @@ function SectionHead({ kicker, title, description, light = false }) {
   );
 }
 
-function AgeGraphic() {
-  return (
-    <div className="age-graphic age-video-graphic" aria-label="Vídeo demonstrativo do IdadeID em reprodução automática e sem som">
-      <video
-        className="age-product-video"
-        src={import.meta.env.BASE_URL + "videos/VideoIdadeID.mp4"}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        disablePictureInPicture
-        aria-label="Demonstração em vídeo da verificação de identidade IdadeID"
-      />
-      <div className="age-video-overlay" aria-hidden="true" />
-      <div className="age-graphic-note"><span className="age-indicator" />IDENTITY / ACCESS</div>
-      <div className="age-graphic-corner">ID/01</div>
-    </div>
-  );
-}
-
-function WoodGraphic() {
-  return (
-    <div className="wood-graphic wood-video-graphic" aria-label="Vídeo ilustrativo de produção e projeto de móveis do MarceneiroPro">
-      <video
-        className="wood-product-video"
-        src={import.meta.env.BASE_URL + "videos/VideoMarceneiroPro.mp4"}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        disablePictureInPicture
-        aria-label="Demonstração visual de projeto de móveis, modelagem e usinagem"
-      />
-      <div className="wood-video-overlay" aria-hidden="true" />
-      <div className="cabinet-header">MODULAR SYSTEM <span>3D / CONFIG</span></div>
-      <div className="cabinet-footer"><span>ESTUDO PARAMÉTRICO ILUSTRATIVO</span><span>LAB / 002</span></div>
-    </div>
-  );
-}
-
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   useEffect(() => {
@@ -186,7 +142,7 @@ export default function Home() {
               <p className="hero-description">Criamos identidades, campanhas, imagens e animações 3D, sites e experiências digitais que dão forma às ideias e valorizam o que cada empresa tem de único. Criatividade e tecnologia, do conceito à entrega.</p>
               <div className="hero-actions">
                 <a className="button button-primary" href="#solucoes">Conheça nossos serviços <ArrowUpRight size={18}/></a>
-                <a className="button button-link" href="#produtos">Conheça nossos produtos <ArrowRight size={17}/></a>
+                <a className="button button-link" href="#sobre">Conheça a LAB <ArrowUpRight size={17}/></a>
               </div>
               <div className="hero-meta">
                 <span className="hero-meta-line" aria-hidden="true" />
@@ -269,37 +225,6 @@ export default function Home() {
         </section>
 
 
-        <section className="products-section section-space" id="produtos">
-          <div className="products-topography" aria-hidden="true" />
-          <div className="site-container">
-            <div className="products-head">
-              <SectionHead light kicker="PRODUTOS CRIADOS NA LAB" title={<>Da criação à inovação.<br/><span>Ideias que viram produtos.</span></>} description="Nossa capacidade criativa também ganha forma em produtos digitais próprios, desenvolvidos para necessidades reais."/>
-              <div className="products-aside">IDEIAS QUE SE TORNAM<br/>PRODUTOS REAIS <MoveUpRight size={18}/></div>
-            </div>
-            <div className="products-grid">
-              <article className="product-card product-idadeid">
-                <div className="product-graphic"><AgeGraphic /></div>
-                <div className="product-details">
-                  <div className="product-brand-row"><span className="product-type">01 / IDENTIDADE DIGITAL</span><span className="product-label">PRODUTO LAB 8792</span></div>
-                  <h3>IdadeID<span>.</span></h3>
-                  <p>Tecnologia de verificação de idade e identidade para operações digitais, com foco em segurança, privacidade e integração.</p>
-                  <a href="https://idadeid.com" target="_blank" rel="noopener noreferrer" className="product-link">Conhecer IdadeID <ArrowUpRight size={18}/></a>
-                </div>
-              </article>
-              <article className="product-card product-marceneiro">
-                <div className="product-graphic"><WoodGraphic /></div>
-                <div className="product-details">
-                  <div className="product-brand-row"><span className="product-type">02 / TECNOLOGIA INDUSTRIAL</span><span className="product-label">EM DESENVOLVIMENTO</span></div>
-                  <h3>MarceneiroPro<span>.</span></h3>
-                  <p>Uma plataforma que une projeto, visualização 3D e configuração de móveis para conectar fabricantes e projetistas.</p>
-                  <a href={talkLink("o projeto MarceneiroPro")} target="_blank" rel="noopener noreferrer" className="product-link">Conversar sobre o projeto <ArrowUpRight size={18}/></a>
-                </div>
-              </article>
-            </div>
-            <p className="products-note"><Sparkles size={16} strokeWidth={1.5}/> Cada produto possui uma proposta própria. A LAB 8792 é a empresa por trás de seu desenvolvimento.</p>
-          </div>
-        </section>
-
         <section className="sectors-section section-space" id="atuacao">
           <div className="site-container sectors-layout">
             <div className="sectors-side">
@@ -360,7 +285,7 @@ export default function Home() {
         <div className="site-container">
           <div className="footer-top">
             <div className="footer-identity"><a href="#inicio"><Brand inverted/></a><p>Design, 3D e comunicação.<br/>Experiências e soluções digitais.</p></div>
-            <div className="footer-column"><span>NAVEGAÇÃO</span><a href="#solucoes">Soluções</a><a href="#produtos">Produtos</a><a href="#atuacao">Atuação</a><a href="#sobre">Sobre a LAB</a></div>
+            <div className="footer-column"><span>NAVEGAÇÃO</span><a href="#solucoes">Serviços</a><a href="#atuacao">Atuação</a><a href="#sobre">Sobre a LAB</a></div>
             <div className="footer-column"><span>CONTATO</span><a href="mailto:contato@lab8792.com.br">contato@lab8792.com.br</a><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp <ArrowUpRight size={14}/></a><a href="https://www.instagram.com/lab_8792/" target="_blank" rel="noopener noreferrer">Instagram <Instagram size={15}/></a></div>
             <div className="footer-location"><span>BASE</span><strong>Bento Gonçalves<br/>Rio Grande do Sul, Brasil</strong><small>Colaboração sem fronteiras.</small></div>
           </div>
